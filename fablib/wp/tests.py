@@ -14,7 +14,7 @@ __all__ = ['setup', 'run', 'install_phpunit', ]
 WP_TEST_DB = 'largotest'
 WP_TESTS_DIR = '/tmp/wordpress-tests-lib'
 WP_CORE_DIR = '/vagrant/'
-WP_VERSION = '3.9.1'
+WP_VERSION = '4.4.2'
 
 
 @task
