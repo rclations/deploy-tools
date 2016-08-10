@@ -61,11 +61,11 @@ You'll also want to supply the ssh environment variables for `production` and `s
     env.user        = ''    # ssh user for staging.
     env.password    = ''    # ssh password for staging.
 
-By default, the deploy tools will use git for deployment to WP Engine. If you'd rather use sftp to deploy, you can do so by specifying `sftp_deploy` in your `fabfile.py`.
+By default, the deploy tools will use git for deployment to WPEngine. If you'd rather use sftp to deploy (recommended), you can do so by specifying `sftp_deploy` in your `fabfile.py`.
 
     env.sftp_deploy = True
 
-After setting `env.sftp_deploy` to `True`, make sure you run `wp.verify_prerequisites` to ensure you have the required software installed.
+After setting `env.sftp_deploy` to `True`, make sure you run `fab wp.verify_prerequisites` to ensure you have the required software installed.
 
 If your version of curl does not support sftp and you wish to use the tools in this repository to deploy, you will have to use a version of curl that does support it. For OSX users, the verification script uses brew to take care of that problem. For users of other operating systems, check your online support communities. Ubuntu users may have success in following [this guide](http://zeroset.mnim.org/2013/03/14/sftp-support-for-curl-in-ubuntu-12-10-quantal-quetzal-and-later/).
 
