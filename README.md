@@ -96,24 +96,9 @@ To switch to a different branch and deploy
 
 #### The Basics
 
-The examples directory also includes a `Vagrantfile`, a bunch of config files for Apache, PHP, MySQL and a `boot-script.sh` for provisioning a Vagrant instance for local development.
+These tools assume that you already have a local server environment setup for deveopment.
 
-Assuming you have [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads) installed, and enough spare disk space, start the Vagrant box with:
-
-    $ vagrant up
-
-It should take about ten minutes to complete the provisioning process, depending on your internet connection speed. 
-
-When the Vagrant box is ready, you'll want to edit your `/etc/hosts` file (i.e. not the `hosts` file on the Vagrant box), adding:
-
-    192.168.33.10 vagrant.dev
-
-Once you've done that, you should be able to visit [http://vagrant.dev](http://vagrant.dev) and see your project running.
-
-A couple notes:
-
-- The Apache configuration for our Vagrant box uses the root directory of your project as the www root for vagrant.dev.
-- Our provisioning script installs mysql and sets a password for the root user with value 'root'.
+For instructions and information on setting up a local server environment on your computer, consult the Largo documentation on [Setting up a complete Largo dev environment](http://largo.readthedocs.io/developers/setup.html).
 
 #### Database commands
 
@@ -123,10 +108,10 @@ These tools include a few commands to ease database setup and manipulation. [Rea
 
 In setting up your dev environment, you'll want to pull in all the necessary WordPress files if they are not included in the project repository. To do this, use the command:
 
-    $ fab wp.install:"3.9.1"
+    $ fab wp.install:"4.5.3"
 
-Where "3.9.1" identifies the [tagged version of the WordPress repository](https://github.com/WordPress/WordPress/tags) that you want to use.
+Where "4.5.3" identifies the [tagged version of the WordPress repository](https://github.com/WordPress/WordPress/tags) that you want to use.
 
 Fabric will download the release .zip file from Github and extract its contents to the project root.
 
-The `gitignore` file included in the examples directory is a good starter for WordPress projects destined for deployment to WPEngine. It will help keep your project repo tidy by ignoring all WordPress core files that are unnecessary for deployment. Simply rename it to `.gitignore` to use it. 
+The `.gitignore` file included in the examples directory is a good starter for WordPress projects destined for deployment to WPEngine. It will help keep your project repo tidy by ignoring all WordPress core files that are unnecessary for deployment.
