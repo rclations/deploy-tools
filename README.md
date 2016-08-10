@@ -30,7 +30,7 @@ To use these tools, add this repo as a git submodule in the root of your project
 
 Then pull the example files in to the root of your project:
 
-	$ cp -Rf tools/examples/* ./
+	$ cp -r tools/examples/* ./
 
 Install the required libraries with pip:
 
